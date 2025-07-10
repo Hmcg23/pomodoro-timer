@@ -31,3 +31,7 @@ button {
     border-radius: 5px;
     border: none;
 }
+
+button:hover {
+    background-color: rgb(185, 55, 35);
+}
