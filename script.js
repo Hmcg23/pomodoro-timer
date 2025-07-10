@@ -12,3 +12,18 @@ const updateTimerDisplay = () => {
     let seconds = time % 60;
     display.textContent = `${minutes.toString().padStart('2', '0')}:${seconds.toString().padStart('2', '0')}`;
 }
+
+const startTimer = () => {
+    if (!timer) {
+        timer = setInterval(() => {
+            time--;
+            updateTimerDisplay();
+            if (time === 0) {
+                timer = null;
+                alert("Your time is up!");
+            } 
+        }, 1000)
+    }
+}
+
+const stopTimer = ()
