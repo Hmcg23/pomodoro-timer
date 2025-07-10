@@ -1,7 +1,7 @@
 const display = document.getElementById('timer-display');
-const startBtn = document.getElementById('start-btn');
-const stopBtn = document.getElementById('stop-btn');
-const ResetBtn = document.getElementById('rest-btn');
+const startBtn = document.getElementById('start-button');
+const stopBtn = document.getElementById('stop-button');
+const resetBtn = document.getElementById('reset-button');
 
 
 let timer = null;
@@ -26,4 +26,19 @@ const startTimer = () => {
     }
 }
 
-const stopTimer = ()
+const stopTimer = () => {
+    clearInterval(timer);
+    timer = null;
+}
+
+const resetTimer = () => {
+    stopTimer();
+    time = 25 * 60;
+    updateTimerDisplay();
+}
+
+startBtn.addEventListener('click', startTimer);
+stopBtn.addEventListener('click', stopTimer);
+resetBtn.addEventListener('click', resetTimer);
+
+window.onload = updateTimeDisplay;
